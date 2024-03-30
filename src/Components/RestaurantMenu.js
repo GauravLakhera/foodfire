@@ -1,19 +1,19 @@
 import Shimmer from "./Shimmer";
 import { useParams } from "react-router-dom";
 
-import useRestaurentMenuInfo from "../utils/useRestarentMenuInfo";
-import star from "../images/star.png";
-import RestaurentCategory from "./RestaurentCategory";
+import useRestaurantMenuInfo from "../utils/useRestaurantMenuInfo";
+import star from "../Images/star.png";
+// import RestaurentCategory from "./RestaurentCategory";
 import { useState } from "react";
-import delivery from "../images/shipping-fast.png";
+import delivery from "../Images/shipping-fast.png";
 const RestaurantMenu = () => {
   const { Resid } = useParams(); //reading the Resid perameter send from the App.js
 
-  const resInfo = useRestaurentMenuInfo(Resid);
+    const resInfo = useRestaurantMenuInfo(Resid);
 
-  const [showIndex, setShowIndex] = useState();
+    const [showIndex, setShowIndex] = useState();
 
-  if (resInfo == null) return <Shimmer />;
+    if (resInfo == null) return <Shimmer />;
 
   const {
     name,

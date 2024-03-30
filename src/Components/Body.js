@@ -10,16 +10,14 @@
 //   );
 // };
 import { useEffect, useState } from "react";
-import { restaurantsList } from "../constant";
 import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import useOnlineStatues from "../utils/useOnlineStatues";
-import Crousal from "./Crousal";
+// import useOnlineStatues from "../utils/useOnlineStatues";
+// import Crousal from "./Crousal";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import Form from "./form";
 
 // function filterData(searchInput, restaurents) {
 //   return restaurents.filter(function mai (res) {
@@ -101,8 +99,8 @@ const Body = () => {
   };
   console.log(restaurents);
   function showForm() {}
-  const isOnline = useOnlineStatues();
-  if (isOnline === false) return <h1>No internet connection</h1>;
+  // const isOnline = useOnlineStatues();
+  // if (isOnline === false) return <h1>No internet connection</h1>;
 
   return restaurents.length === 0 || typeof restaurents === undefined ? (
     <>
@@ -173,7 +171,7 @@ const Body = () => {
           Hey, What's on your mind ?
         </h1>
       </div>
-      <div className="flex bg-slate-50">
+      {/* <div className="flex bg-slate-50">
         {carousel.length === 0 ? (
           <h1>No crausol</h1>
         ) : (
@@ -185,7 +183,7 @@ const Body = () => {
             </Slider>
           </div>
         )}
-      </div>
+      </div> */}
 
       <h1 className="md:w-9/12 w-11/12 m-auto text-slate-800 text-xl font-semibold p-5 my-3 border-b-2 bg-slate-50">
         Top restaurant chains in Rishikesh

@@ -1,5 +1,4 @@
-import { IMG_CDN_URL } from "../constant";
-import star from "../images/star.png";
+import star from "../Images/star.png";
 
 const RestaurantCard = ({
   name,
@@ -12,7 +11,10 @@ const RestaurantCard = ({
     <div className="flex md:flex-col rounded-lg m-3 md:m-5 shadow-xl bg-slate-50 w-full md:max-w-52 hover:scale-110  transition duration-300 ease-in-out hover:rounded-md">
       <img
         className="w-28 md:w-full h-24 md:h-56 object-cover rounded-t-lg "
-        src={IMG_CDN_URL + cloudinaryImageId}
+        src={
+          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
+          cloudinaryImageId
+        }
         alt="Restaurant Image"
       />
       <div className="flex flex-col">
