@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import home from "../images/home.png";
-import contectus from "../images/contectus.png";
-import aboutus from "../images/about.png";
-import logoImg from "../images/logo.jpg";
-import cart from "../images/cart.png";
+import home from "../Images/home.png";
+import contectus from "../Images/contectus.png";
+import aboutus from "../Images/about.png";
+import logoImg from "../Images/logo.jpg";
+import cart from "../Images/cart.png";
 import { useSelector } from "react-redux";
 
 const HeadComponent = () => {
