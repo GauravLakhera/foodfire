@@ -4,12 +4,11 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 import "./index.css";
 import App from "./App";
 import Body from "./Components/Body";
-import RestaurantMenu from "./Components/RestaurantMenu";
+import RestaurantDetail from "./Components/RestaurantDetails";
 import AboutUs from "./Components/AboutUs";
 import ConnectUs from "./Components/ConnectUs";
 import Error from "./Components/Error";
-import { Provider } from "react-redux";
-import appStore from "./utils/appStore";
+
 import Cart from "./Components/Cart";
 
 //Imported outled from the react-router-dom and added the childer to main rout
@@ -33,7 +32,7 @@ const appRouter = createBrowserRouter([
       },
       {
         path: "/restaurent/:Resid",
-        element: <RestaurantMenu />,
+        element: <RestaurantDetail />,
       },
       {
         path: "/cart",

@@ -10,7 +10,7 @@
 //   );
 // };
 import { useEffect, useState } from "react";
-import RestaurantCard from "./RestaurantCard";
+import Cards from "./Cards";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 // import useOnlineStatues from "../utils/useOnlineStatues";
@@ -18,6 +18,8 @@ import { Link } from "react-router-dom";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import info from "../constant";
+import Crousal from "../Components/Crousal"
 
 // function filterData(searchInput, restaurents) {
 //   return restaurents.filter(function mai (res) {
@@ -59,8 +61,8 @@ const Body = () => {
     setFilteredRestaurents(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
-    setcarousel(json?.data?.cards[0]?.card?.card?.imageGridCards?.info);
-    //console.log(carousel);
+    setcarousel(info);
+    console.log(carousel);
   }
   var settings = {
     dots: true,
@@ -171,7 +173,7 @@ const Body = () => {
           Hey, What's on your mind ?
         </h1>
       </div>
-      {/* <div className="flex bg-slate-50">
+      <div className="flex bg-slate-50">
         {carousel.length === 0 ? (
           <h1>No crausol</h1>
         ) : (
@@ -183,7 +185,7 @@ const Body = () => {
             </Slider>
           </div>
         )}
-      </div> */}
+      </div>
 
       <h1 className="md:w-9/12 w-11/12 m-auto text-slate-800 text-xl font-semibold p-5 my-3 border-b-2 bg-slate-50">
         Top restaurant chains in Rishikesh
@@ -201,7 +203,7 @@ const Body = () => {
                 key={res.info.id}
                 to={"/restaurent/" + res.info.id}
               >
-                <RestaurantCard {...res.info} />
+                <Cards {...res.info} />
               </Link>
             ))
           )}
