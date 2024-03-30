@@ -19,7 +19,8 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import info from "../constant";
-import Crousal from "../Components/Crousal"
+import Crousal from "../Components/Crousal";
+import Form from "../Components/Form"
 
 // function filterData(searchInput, restaurents) {
 //   return restaurents.filter(function mai (res) {
@@ -42,6 +43,11 @@ const Body = () => {
   const [carousel, setcarousel] = useState([]);
   // const searchvar = useState();
   // const[searchInput,setSeachInput]=searchvar
+  const [isOpen, setIsOpen] = useState(false);
+
+  const togglePopup = () => {
+    setIsOpen(!isOpen);
+  };
 
   useEffect(() => {
     // Api call
@@ -114,7 +120,7 @@ const Body = () => {
     </>
   ) : (
     <>
-      <div class="rounded-lg bg-gray-100 p-2 flex content-center items-center justify-center">
+      <div class="rounded-lg border-b p-2 w-full md:w-6/12 m-auto flex content-center items-center justify-around">
         <div class="flex">
           <div class="flex w-10 items-center justify-center rounded-tl-lg rounded-bl-lg border-r border-gray-200 bg-white p-5">
             <svg
@@ -127,7 +133,7 @@ const Body = () => {
           </div>
           <input
             type="text"
-            className="w-full max-w-[160px] bg-white pl-2 text-base font-semibold outline-0"
+            className="w-full border max-w-[160px] bg-white pl-2 text-base font-semibold outline-0"
             placeholder="Search"
             value={searchInput}
             //e.target.value => whatever you write on input feild
@@ -159,13 +165,16 @@ const Body = () => {
             X
           </button>
         </div>
-        <div className="text-sm">Do you have any suggestion </div>
-        <button
-          className="border m-1 p-2 rounded-lg text-white bg-blue-500 font-semibold"
-          onClick={showForm()}
-        >
-          Submit form
-        </button>
+        <div className="flex flex-col items-center justify-items-center ">
+          <h1 className="text-xs md:text-sm">Do you have any suggestion </h1>
+          <button
+            className="border m-1 p-2 rounded-lg text-white bg-blue-500 font-semibold text-xs md:text-sm"
+            onClick={togglePopup}
+          >
+            Submit form
+          </button>
+          <Form isOpen={isOpen} togglePopup={togglePopup} />
+        </div>
       </div>
 
       <div>
@@ -191,7 +200,7 @@ const Body = () => {
         Top restaurant chains in Rishikesh
       </h1>
       <div className="bg-gray-50">
-        <div className=" md:w-9/12 w-11/12 m-auto flex flex-wrap bg-white justify-evenly shadow-2xl ">
+        <div className=" md:w-9/12 w-11/12  m-auto md:p-5 flex content-center flex-wrap bg-white justify-center md:justify-around shadow-2xl ">
           {FilteredRestaurents.length === 0 ? (
             <h1 className="text-center text-xl m-5 p-5 text-red-600 border rounded-2xl">
               No restaurents found
