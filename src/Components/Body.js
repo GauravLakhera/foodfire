@@ -11,7 +11,7 @@
 // };
 import { useEffect, useState } from "react";
 import { restaurantsList } from "../constant";
-import ResturraentCard from "./ResturraentCard";
+import RestaurantCard from "./RestaurantCard";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatues from "../utils/useOnlineStatues";
@@ -203,7 +203,7 @@ const Body = () => {
                 key={res.info.id}
                 to={"/restaurent/" + res.info.id}
               >
-                <ResturraentCard {...res.info} />
+                <RestaurantCard {...res.info} />
               </Link>
             ))
           )}
