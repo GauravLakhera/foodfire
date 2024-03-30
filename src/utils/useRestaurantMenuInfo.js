@@ -9,7 +9,7 @@ const useRestaurantMenuInfo = (Resid) => {
 
     const fetchData = async () => {
         try {
-            const data = await fetch("https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=30.0869281&lng=78.2676116&restaurantId=" + Resid + "&catalog_qa=undefined&submitAction=ENTER");
+            const data = await fetch("https://foodfire.onrender.com/api/menu?page-type=REGULAR_MENU&complete-menu=true&lat=21.1702401&lng=72.83106070000001&&submitAction=ENTER&restaurantId=" + Resid + "&catalog_qa=undefined&submitAction=ENTER");
             const json = await data.json();
             setResInfo(json.data);
         } catch (error) {
