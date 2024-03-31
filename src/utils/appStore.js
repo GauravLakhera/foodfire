@@ -1,7 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-import { useReducer } from "react";
 import cartReducer from "./cartSlice";
 
+//thsi store will be provided all over our application 
 const appStore = configureStore({
   reducer: { cart: cartReducer },
 });

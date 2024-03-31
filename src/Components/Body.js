@@ -11,6 +11,7 @@ import info from "../constant";
 import Crousal from "../Components/Crousal";
 import Form from "../Components/Form";
 
+//filtering the data on the basis of seach input value 
 function filterData(searchInput, restaurents) {
   return restaurents.filter((res) =>
     res.info.name.toLowerCase().includes(searchInput.toLowerCase())
@@ -22,16 +23,15 @@ const Body = () => {
   const [restaurents, setRestaurent] = useState([]);
   const [searchInput, setSeachInput] = useState(""); //useState  returns -> [variable name ,  function to update the variable value]
   const [carousel, setcarousel] = useState([]);
-  // const searchvar = useState();
-  // const[searchInput,setSeachInput]=searchvar
   const [isOpen, setIsOpen] = useState(false);
 
+  //for submission form
   const togglePopup = () => {
     setIsOpen(!isOpen);
   };
 
   useEffect(() => {
-    // Api call
+    // Api call fro restaurent data
     getRestaurants();
   }, []);
 
@@ -39,9 +39,8 @@ const Body = () => {
     const data = await fetch(
       "https://foodfire.onrender.com/api/restaurants?lat=21.1702401&lng=72.83106070000001&page_type=DESKTOP_WEB_LISTING"
     );
-
+    //converting returned data from API to JSON formate
     const json = await data.json();
-    console.log(json);
     setRestaurent(
       json?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -51,6 +50,7 @@ const Body = () => {
     setcarousel(info);
     console.log(carousel);
   }
+  //setting object for crousal
   var settings = {
     dots: true,
     infinite: false,
@@ -102,14 +102,13 @@ const Body = () => {
       },
     ],
   };
-  console.log(restaurents);
-  function showForm() {}
+  //check online status
   const isOnline = useOnlineStatus();
   if (isOnline === false)
     return (
       <h1 className="text-xl font-bold text-center ">No internet connection</h1>
     );
-
+  //checking if restaurent has some value or not // Conditional rendering
   return restaurents.length === 0 || typeof restaurents === undefined ? (
     <>
       <div className="  md:w-9/12 w-11/12 m-auto flex flex-wrap justify-evenly shadow-2xl  mt-52">
@@ -143,11 +142,9 @@ const Body = () => {
           <button
             className="bg-blue-500 p-2 rounded-tr-lg rounded-br-lg text-sm text-white font-semibold hover:bg-blue-800 transition-colors"
             onClick={() => {
-              //need to filter the data
+              // need to filter the data for sarch
               const filteredData = filterData(searchInput, restaurents);
-
               setFilteredRestaurents(filteredData);
-              // setFilteredRestaurents(filterData(searchInput, restaurents));
               document.getElementById("close").classList.toggle("hidden");
             }}
           >
@@ -172,6 +169,7 @@ const Body = () => {
           >
             Submit form
           </button>
+          {/* //rendering custom Form component  */}
           <Form isOpen={isOpen} togglePopup={togglePopup} />
         </div>
       </div>
@@ -182,10 +180,12 @@ const Body = () => {
         </h1>
       </div>
       <div className="flex bg-slate-50">
+        {/* Conditional rendering if there is crousal or not  */}
         {carousel.length === 0 ? (
           <h1>No crausol</h1>
         ) : (
           <div className="w-9/12 m-auto md:w-8/12">
+            {/* Slider is an component given by react library for displaying components */}
             <Slider {...settings}>
               {carousel.map((res) => (
                 <Crousal key={res.id} {...res} />
@@ -200,6 +200,7 @@ const Body = () => {
       </h1>
       <div className="bg-gray-50">
         <div className=" md:w-9/12 w-11/12  m-auto md:p-5 flex content-center flex-wrap bg-white justify-center md:justify-around shadow-2xl ">
+          {/* Conditional rendering on the basis of search result that is stored inside FilteredRestaurents */}
           {FilteredRestaurents.length === 0 ? (
             <h1 className="text-center text-xl m-5 p-5 text-red-600 border rounded-2xl">
               No restaurents found
@@ -209,8 +210,10 @@ const Body = () => {
               <Link
                 className="custom-link"
                 key={res.info.id}
-                to={"/restaurent/" + res.info.id}
+                // if any restaurent Card is clicked it will redirect to its corresponding page using res.info.id
+                to={"/restaurent/" + res.info.id}//this act as an onclick on each restauernt card 
               >
+                {/* calling Card component with restaurent data passing as props */}
                 <Cards {...res.info} />
               </Link>
             ))

@@ -2,6 +2,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 const Crousal = ({ imageId }) => {
+  //in thie component we are getting each image (imageId) from crousal and then we computing its position 
   return (
     <img
       className="w-full h-full object-cover mix-blend-multiply"

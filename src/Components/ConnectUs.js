@@ -1,6 +1,7 @@
 import React from "react";
 
 function ConnectUs() {
+    //connect us page 
   return (
     <>
       <section className="relative z-10 p-10 overflow-hidden bg-white py-20 dark:bg-dark lg:py-[120px]">

@@ -41,6 +41,6 @@ const appRouter = createBrowserRouter([
     ],
   },
 ]);
-
+//rendering in main root 'div' from index.html
 const root = createRoot(document.getElementById("root"));
 root.render(<RouterProvider router={appRouter} />);

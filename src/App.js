@@ -10,13 +10,15 @@ import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
 import Footer from "./Components/Footer";
 
+// main route of the app
 function App() {
   return (
     <>
       <Provider store={appStore}>
         <HeadComponent />
+
         <Outlet />
-        <Footer/>
+        <Footer />
       </Provider>
     </>
   );

@@ -1,6 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import check from "../Images/check.png";
+
+//SuccessMessage component that will appair for 2 sec when you submit the form
 const SuccessMessage = () => {
   return (
     <div className="flex content-center items-center p-2">
@@ -32,16 +34,12 @@ function Form({ isOpen, togglePopup }) {
   const [formData, setFormData] = useState(initialFormData);
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const handleChange = (event) => {
-    const { name, value } = event.target;
-
+    const { name, value } = event.target;//getting the data from form values
     setFormData({
       ...formData,
       [name]: value,
-    });
+    });//inserting the data into FormData variable
   };
-  useEffect(() => {
-    console.log(formData);
-  }, [formData]);
   return (
     <div
       className={`fixed top-0 left-0 w-full h-full z-20 bg-gray-900 bg-opacity-50 flex items-center justify-center ${

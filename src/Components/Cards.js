@@ -1,5 +1,7 @@
 import star from "../Images/star.png";
 
+//Card component that will display a card for each restaurent with there respective data 
+//1-> we destructure the data on the go that is provided by Body component eg. name,cloudinaryImageId..
 const RestaurantCard = ({
   name,
   cloudinaryImageId,

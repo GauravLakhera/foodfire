@@ -4,15 +4,17 @@ import { cleareCart } from "../utils/cartSlice";
 import alt from "../Images/alt.jpg"
 
 const Cart = () => {
-  const cardItems = useSelector((store) => store.cart.items);
+    //geting the cart items from store
+  const cartItems = useSelector((store) => store.cart.items);
 
   const dispatch = useDispatch();
 
+  //this function will remove all cart elements by calling cleareCart() Function
   const RemoveFromCart = () => {
     dispatch(cleareCart());
   };
-
-  if (cardItems.length === 0)
+//Conditional rendering o the basis of cart items
+  if (cartItems.length === 0)
     return (
       <div className="p-1 text-black text-center font-semibold text-xl m-52">
         No items. 
@@ -27,12 +29,13 @@ const Cart = () => {
         >
           Clear Cart
         </button>
-        {cardItems.map((item) => (
+        {/* iterating over the cartItem and diapaying the info in Cart component */}
+        {cartItems.map((item) => (
           <div
             key={item.card.info.id}
             className="my-2 flex flex-row justify-between bg-slate-50 rounded-md p-2 border-blue-100 border-b-2"
           >
-            {/* {console.log(item.card.info.name)} */}
+
 
             <div className="flex flex-col">
               <span className="flex mb-1">

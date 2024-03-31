@@ -24,7 +24,8 @@ const HeadComponent = () => {
 
       <ul className="flex   pr-2 space-x-1 md:space-x-8">
         <li className="  p-2 rounded-md hover:bg-gray-200 ">
-          <Link to="/">
+        {/* <Link>  this will route our app by to="/" we can give any url  */}
+          <Link to="/"> 
             <div className="flex flex-row content-center items-center">
               <img className="w-5 h-5" src={home} alt="Home"></img>
               <h1 className="mt-1 ml-2 hidden md:block  font-semibold">Home</h1>
