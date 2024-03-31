@@ -1,19 +1,9 @@
-// const Body = () => {
-//   return (
-//     <div className="resturBody">
 
-//       {restaurants.map(function(res){
-//        return <ResturraentCard {...res.info}/>
-//       })}
-
-//     </div>
-//   );
-// };
 import { useEffect, useState } from "react";
 import Cards from "./Cards";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-// import useOnlineStatues from "../utils/useOnlineStatues";
+import useOnlineStatus from "../utils/useOnlineStatus"
 // import Crousal from "./Crousal";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
@@ -107,8 +97,8 @@ const Body = () => {
   };
   console.log(restaurents);
   function showForm() {}
-  // const isOnline = useOnlineStatues();
-  // if (isOnline === false) return <h1>No internet connection</h1>;
+  const isOnline = useOnlineStatus();
+  if (isOnline === false) return <h1 className="text-xl font-bold text-center ">No internet connection</h1>;
 
   return restaurents.length === 0 || typeof restaurents === undefined ? (
     <>

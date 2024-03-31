@@ -1,12 +1,27 @@
 import React from "react";
 import { useState, useEffect } from "react";
-
+import check from "../Images/check.png";
+const SuccessMessage = () => {
+  return (
+    <div className="flex content-center items-center p-2">
+      <img src={check} className="w-6 h-6"></img>
+      <p className="pl-1 text-xl font-bold text-green-700 ">
+        Form submitted successfully!
+      </p>
+    </div>
+  );
+};
 function Form({ isOpen, togglePopup }) {
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent the default form submission behavior
-    // Your form submission logic here
-    setFormData(initialFormData);
-    togglePopup();
+    //  form submission logic 
+    setFormData(initialFormData); // Reset the form data after submission
+    // Close the popup after submission
+    setShowSuccessMessage(true); // Show the success message
+    setTimeout(() => {
+      setShowSuccessMessage(false); // Hide the success message after 2 seconds
+      togglePopup();
+    }, 1000);
   };
   const initialFormData = {
     name: "",
@@ -15,6 +30,7 @@ function Form({ isOpen, togglePopup }) {
   };
 
   const [formData, setFormData] = useState(initialFormData);
+  const [showSuccessMessage, setShowSuccessMessage] = useState(false);
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -86,6 +102,7 @@ function Form({ isOpen, togglePopup }) {
             Submit
           </button>
         </form>
+        {showSuccessMessage && <SuccessMessage />}
       </div>
     </div>
   );
