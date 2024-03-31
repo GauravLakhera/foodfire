@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 
 import { cleareCart } from "../utils/cartSlice";
+import alt from "../Images/alt.jpg"
 
 const Cart = () => {
   const cardItems = useSelector((store) => store.cart.items);
@@ -51,6 +52,7 @@ const Cart = () => {
                   "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
                   item.card.info.imageId
                 }
+                alt={alt}
               ></img>
             </div>
           </div>

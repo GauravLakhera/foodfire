@@ -1,4 +1,5 @@
 const Shimmer = () => {
+  // Shimmer loading effect component
   return (
     <div className="flex flex-col border mb-2 shadow-xl w-52 bg-gray-300 animate-pulse ">
       {/* img */}

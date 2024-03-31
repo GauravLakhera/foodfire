@@ -13,15 +13,15 @@ function AboutUs() {
               <div className="flex items-center -mx-3 sm:-mx-4">
                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
                   <div className="py-3 sm:py-4">
-                    <img src={food1} alt="" className="w-full rounded-2xl" />
+                    <img src={food1} alt="Image 1" className="w-full rounded-2xl" />
                   </div>
                   <div className="py-3 sm:py-4">
-                    <img src={food2} alt="" className="w-full rounded-2xl" />
+                    <img src={food2} alt="Image 2" className="w-full rounded-2xl" />
                   </div>
                 </div>
                 <div className="w-full px-3 sm:px-4 xl:w-1/2">
                   <div className="relative z-10 my-4">
-                    <img src={food3} alt="" className="w-full rounded-2xl" />
+                    <img src={food3} alt="Image 3" className="w-full rounded-2xl" />
                     <span className="absolute -right-7 -bottom-7 z-[-1]">
                       <svg
                         width={134}

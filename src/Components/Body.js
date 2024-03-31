@@ -3,21 +3,13 @@ import Cards from "./Cards";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
-// import Crousal from "./Crousal";
+
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import info from "../constant";
 import Crousal from "../Components/Crousal";
 import Form from "../Components/Form";
-
-// function filterData(searchInput, restaurents) {
-//   return restaurents.filter(function mai (res) {
-//     return res.info.name.includes(searchInput)
-//   }
-
-//   );
-// }
 
 function filterData(searchInput, restaurents) {
   return restaurents.filter((res) =>

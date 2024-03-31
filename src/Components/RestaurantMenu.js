@@ -1,6 +1,5 @@
 import ResMenuDetail from "./ResMenuDetail";
 import dropDown from "../Images/drop-down-arrow.png";
-import { useState } from "react";
 const RestaurentMenu = ({ data, showItem, setShowIndex }) => {
   let isToggled = true;
   const handelClick = () => {

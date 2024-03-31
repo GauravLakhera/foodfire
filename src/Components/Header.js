@@ -15,7 +15,7 @@ const HeadComponent = () => {
     <div className="flex md:justify-around justify-between items-center  bg-gray-50 shadow">
       <div className="flex items-center">
         <a href="/">
-          <img className="w-24 mix-blend-multiply p-1" src={logoImg} />
+          <img className="w-24 mix-blend-multiply p-1" src={logoImg} alt="Logo"/>
         </a>
         <h4 className="hidden md:block text-xs md:text-sm md:py-2 md:px-0 first-line:underline text-slate-700 ">
           Rishikesh,Uttarakhand,Dehradun -249201
