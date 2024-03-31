@@ -14,7 +14,7 @@ const SuccessMessage = () => {
 function Form({ isOpen, togglePopup }) {
   const handleSubmit = (event) => {
     event.preventDefault(); // Prevent the default form submission behavior
-    //  form submission logic 
+    //  form submission logic
     setFormData(initialFormData); // Reset the form data after submission
     // Close the popup after submission
     setShowSuccessMessage(true); // Show the success message
@@ -50,7 +50,7 @@ function Form({ isOpen, togglePopup }) {
     >
       <div className="bg-white p-6 rounded-lg w-10/12 md:w-6/12">
         <div className="flex justify-between">
-          <h2 className="text-lg font-semibold mb-4">Popup Form</h2>
+          <h2 className="text-lg font-semibold mb-4">Suggestion Form</h2>
           <button
             className="border hover:bg-red-200 rounded-full p-3 font-semibold text-red-500"
             onClick={togglePopup}

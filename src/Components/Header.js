@@ -12,7 +12,7 @@ const HeadComponent = () => {
 
   //store is provided by the react-redux this store in our appStore that we provided at the top level
   return (
-    <div className="flex md:justify-around justify-between items-center  bg-slate-100 shadow-md">
+    <div className="flex md:justify-around justify-between items-center  bg-gray-50 shadow">
       <div className="flex items-center">
         <a href="/">
           <img className="w-24 mix-blend-multiply p-1" src={logoImg} />
@@ -32,7 +32,7 @@ const HeadComponent = () => {
           </Link>
         </li>
         <li className=" p-2 rounded-md hover:bg-gray-200">
-          <Link to="/about">
+          <Link to="/connect">
             <div className="flex flex-row content-center items-center">
               <img className="w-5 h-5 " src={contectus} alt="Contect us"></img>
               <h1 className="mt-1 ml-2 hidden md:block font-semibold">
@@ -42,11 +42,11 @@ const HeadComponent = () => {
           </Link>
         </li>
         <li className=" p-2 rounded-md hover:bg-gray-200">
-          <Link to="/contact">
+          <Link to="/about">
             <div className="flex flex-row content-center items-center">
               <img className="w-5 h-5 " src={aboutus} alt="About us"></img>
               <h1 className="mt-1 ml-2 hidden md:block  font-semibold">
-                About us{" "}
+                About us
               </h1>
             </div>
           </Link>
