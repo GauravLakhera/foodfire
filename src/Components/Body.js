@@ -68,6 +68,15 @@ const Body = () => {
     initialSlide: 0,
     responsive: [
       {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true,
+        },
+      },
+      {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
@@ -76,6 +85,7 @@ const Body = () => {
           dots: true,
         },
       },
+
       {
         breakpoint: 600,
         settings: {
@@ -193,8 +203,8 @@ const Body = () => {
         )}
       </div>
 
-      <h1 className="md:w-9/12 w-11/12 m-auto text-slate-800 text-xl font-semibold p-5 my-3 border-b-2 bg-slate-50">
-        Top restaurant chains in Rishikesh
+      <h1 className="md:w-9/12 w-11/12 m-auto text-slate-800 text-xl font-semibold py-5 my-3 border-b-2 bg-slate-50">
+        Top Restaurant Chains In Rishikesh
       </h1>
       <div className="bg-gray-50">
         <div className=" md:w-9/12 w-11/12  m-auto md:p-5 flex content-center flex-wrap bg-white justify-center md:justify-around shadow-2xl ">

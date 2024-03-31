@@ -13,7 +13,7 @@ const HeadComponent = () => {
   //store is provided by the react-redux this store in our appStore that we provided at the top level
   return (
     <div className="flex md:justify-around justify-between items-center  bg-slate-100 shadow-md">
-      <div className="flex items-start">
+      <div className="flex items-center">
         <a href="/">
           <img className="w-24 mix-blend-multiply p-1" src={logoImg} />
         </a>
