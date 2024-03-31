@@ -1,16 +1,15 @@
-
 import { useEffect, useState } from "react";
 import Cards from "./Cards";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
-import useOnlineStatus from "../utils/useOnlineStatus"
+import useOnlineStatus from "../utils/useOnlineStatus";
 // import Crousal from "./Crousal";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import info from "../constant";
 import Crousal from "../Components/Crousal";
-import Form from "../Components/Form"
+import Form from "../Components/Form";
 
 // function filterData(searchInput, restaurents) {
 //   return restaurents.filter(function mai (res) {
@@ -65,7 +64,7 @@ const Body = () => {
     infinite: false,
     speed: 500,
     slidesToShow: 5,
-    slidesToScroll: 4,
+    slidesToScroll: 3,
     initialSlide: 0,
     responsive: [
       {
@@ -92,13 +91,22 @@ const Body = () => {
           slidesToScroll: 1,
           dots: false,
         },
+        breakpoint: 347,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          dots: false,
+        },
       },
     ],
   };
   console.log(restaurents);
   function showForm() {}
   const isOnline = useOnlineStatus();
-  if (isOnline === false) return <h1 className="text-xl font-bold text-center ">No internet connection</h1>;
+  if (isOnline === false)
+    return (
+      <h1 className="text-xl font-bold text-center ">No internet connection</h1>
+    );
 
   return restaurents.length === 0 || typeof restaurents === undefined ? (
     <>
@@ -131,7 +139,7 @@ const Body = () => {
           />
 
           <button
-            className="bg-blue-500 p-2 rounded-tr-lg rounded-br-lg text-white font-semibold hover:bg-blue-800 transition-colors"
+            className="bg-blue-500 p-2 rounded-tr-lg rounded-br-lg text-sm text-white font-semibold hover:bg-blue-800 transition-colors"
             onClick={() => {
               //need to filter the data
               const filteredData = filterData(searchInput, restaurents);
@@ -156,9 +164,8 @@ const Body = () => {
           </button>
         </div>
         <div className="flex flex-col items-center justify-items-center ">
-          <h1 className="text-xs md:text-sm">Do you have any suggestion </h1>
           <button
-            className="border m-1 p-2 rounded-lg text-white bg-blue-500 font-semibold text-xs md:text-sm"
+            className="bg-blue-500 p-2 rounded-tr-lg rounded-br-lg text-sm text-white font-semibold hover:bg-blue-800 transition-colors"
             onClick={togglePopup}
           >
             Submit form
