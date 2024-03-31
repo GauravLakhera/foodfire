@@ -6,23 +6,31 @@ function Footer() {
       <footer className=" mt-5 footer p-10 bg-base-200 text-base-content flex justify-around bg-[#202020] text-white">
         <nav className="flex flex-col">
           <h6 className="footer-title font-semibold text-xl">Services</h6>
-          <a className="link link-hover pl-2">Branding</a>
-          <a className="link link-hover pl-2">Design</a>
-          <a className="link link-hover pl-2">Marketing</a>
-          <a className="link link-hover pl-2">Advertisement</a>
+          <a className="link link-hover pl-2 pt-1">Food delivery</a>
+          <a className="link link-hover pl-2 pt-1">UPI payment</a>
+          <a className="link link-hover pl-2 pt-1">grocery</a>
+          <a className="link link-hover pl-2 pt-1 ">Advertisement</a>
         </nav>
         <nav className="flex flex-col ">
           <h6 className="footer-title font-semibold text-xl">Company</h6>
-          <a className="link link-hover pl-2">About us</a>
-          <a className="link link-hover pl-2">Contact</a>
-          <a className="link link-hover pl-2">Jobs</a>
-          <a className="link link-hover pl-2">Press kit</a>
+          <a className="link link-hover underline pl-2 pt-1 cursor-pointer">
+            About us
+          </a>
+          <a className="link link-hover underline pl-2 pt-1 cursor-pointer">
+            Contact
+          </a>
+          <a className="link link-hover underline pl-2 pt-1 cursor-pointer">
+            Jobs
+          </a>
+          <a className="link link-hover underline pl-2 pt-1 cursor-pointer">
+            Press kit
+          </a>
         </nav>
         <nav className="flex flex-col">
           <h6 className="footer-title font-semibold text-xl">Legal</h6>
-          <a className="link link-hover pl-2">Terms of use</a>
-          <a className="link link-hover pl-2">Privacy policy</a>
-          <a className="link link-hover pl-2">Cookie policy</a>
+          <a className="link link-hover pl-2 pt-1">Terms of use</a>
+          <a className="link link-hover pl-2 pt-1">Privacy policy</a>
+          <a className="link link-hover pl-2 pt-1">Cookie policy</a>
         </nav>
       </footer>
       <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content bg-[#202020] text-white border-base-300">
