@@ -8,8 +8,8 @@ const RestaurantCard = ({
   sla,
 }) => {
   return (
-    <div className="flex border-b md:border-b-0 shadow-xl justify-between md:flex-col m-3 md:m-6 bg-white w-full md:w-48 hover:scale-110 p-1 md:p-0 transition duration-300 ease-in-out hover:rounded-md">
-      <div className="md:rounded-t-2xl border-r flex md:flex-col md:rounded-b-xl md:shadow-xl">
+    <div className="flex border-b md:border-b-0 shadow-xl md:shadow-sm justify-between md:flex-col m-3 md:m-6 bg-white w-full md:w-48 hover:scale-110 p-1 md:p-0 transition duration-300 ease-in-out hover:rounded-md">
+      <div className="md:rounded-t-2xl border-r flex md:flex-col md:rounded-b-xl md:shadow-lg">
         <img
           className="w-28 md:w-full h-28 md:h-48 object-cover rounded-md md:rounded-none md:rounded-t-lg "
           src={
@@ -31,7 +31,7 @@ const RestaurantCard = ({
         {cuisines.join(", ")}
       </h3>
 
-      <div className="flex flex-col md:flex-row justify-around items-center md:p-2 md:border-t-2">
+      <div className="flex flex-col md:flex-row justify-between items-center md:p-2 md:border-t">
         <h1 className="text-ellipsis text-sm">{sla.slaString}</h1>
 
         <div className="flex justify-center items-center font-semibold">

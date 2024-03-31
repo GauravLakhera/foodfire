@@ -12,7 +12,7 @@ const HeadComponent = () => {
 
   //store is provided by the react-redux this store in our appStore that we provided at the top level
   return (
-    <div className="flex md:justify-around justify-between items-center bg-slate-100 shadow-md">
+    <div className="flex md:justify-around justify-between items-center  bg-slate-100 shadow-md">
       <div className="flex items-start">
         <a href="/">
           <img className="w-24 mix-blend-multiply p-1" src={logoImg} />
@@ -22,55 +22,45 @@ const HeadComponent = () => {
         </h4>
       </div>
 
-      <ul className="flex  pr-2 space-x-1 md:space-x-8">
-        <li className=" p-2 rounded-md hover:rounded-full hover:bg-gray-300 ">
+      <ul className="flex   pr-2 space-x-1 md:space-x-8">
+        <li className="  p-2 rounded-md hover:bg-gray-200 ">
           <Link to="/">
-            <div className="flex flex-col content-center items-center">
-              <img
-                className="w-5 h-5 md:w-7 md:h-7 "
-                src={home}
-                alt="Home"
-              ></img>
-              <h1 className="mt-1 hidden md:block  font-semibold">Home</h1>
+            <div className="flex flex-row content-center items-center">
+              <img className="w-5 h-5" src={home} alt="Home"></img>
+              <h1 className="mt-1 ml-2 hidden md:block  font-semibold">Home</h1>
             </div>
           </Link>
         </li>
-        <li className=" p-2 rounded-md hover:rounded-full hover:bg-gray-300">
+        <li className=" p-2 rounded-md hover:bg-gray-200">
           <Link to="/about">
-            <div className="flex flex-col content-center items-center">
-              <img
-                className="w-5 h-5 md:w-7 md:h-7"
-                src={contectus}
-                alt="Contect us"
-              ></img>
-              <h1 className="mt-1 hidden md:block font-semibold">Contect us</h1>
+            <div className="flex flex-row content-center items-center">
+              <img className="w-5 h-5 " src={contectus} alt="Contect us"></img>
+              <h1 className="mt-1 ml-2 hidden md:block font-semibold">
+                Contect us
+              </h1>
             </div>
           </Link>
         </li>
-        <li className=" p-2 rounded-md hover:rounded-full hover:bg-gray-300">
+        <li className=" p-2 rounded-md hover:bg-gray-200">
           <Link to="/contact">
-            <div className="flex flex-col content-center items-center">
-              <img
-                className="w-5 h-5 md:w-7 md:h-7"
-                src={aboutus}
-                alt="About us"
-              ></img>
-              <h1 className="mt-1 hidden md:block  font-semibold">About us </h1>
+            <div className="flex flex-row content-center items-center">
+              <img className="w-5 h-5 " src={aboutus} alt="About us"></img>
+              <h1 className="mt-1 ml-2 hidden md:block  font-semibold">
+                About us{" "}
+              </h1>
             </div>
           </Link>
         </li>
-        <li className="p-2  rounded-md hover:rounded-full hover:bg-gray-300">
+        <li className="p-2  rounded-md  hover:bg-gray-200">
           <Link to="/cart">
-            <div className=" flex flex-col items-center">
-              <img
-                className="w-5 h-5 md:w-7 md:h-7"
-                src={cart}
-                alt="cart"
-              ></img>
+            <div className=" flex flex-row items-center content-center">
+              <img className="w-5 h-5 " src={cart} alt="cart"></img>
               {cartInfo.length > 0 ? (
                 <h1 className="text-md font-bold">({cartInfo.length})</h1>
               ) : (
-                <h1 className="mt-1 hidden md:block  font-semibold">Cart</h1>
+                <h1 className="mt-1 ml-2 hidden md:block  font-semibold">
+                  Cart
+                </h1>
               )}
             </div>
           </Link>

@@ -8,6 +8,7 @@ import { createBrowserRouter, Outlet, RouterProvider } from "react-router-dom";
 //imorting the default import from Header.js
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
       <Provider store={appStore}>
         <HeadComponent />
         <Outlet />
+        <Footer/>
       </Provider>
     </>
   );
